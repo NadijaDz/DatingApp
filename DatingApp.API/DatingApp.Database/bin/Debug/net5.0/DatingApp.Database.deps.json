@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "DatingApp.Database/1.0.0": {
+        "runtime": {
+          "DatingApp.Database.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DatingApp.Database/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
