@@ -1498,16 +1498,6 @@
           "bin/placeholder/DatingApp.Database.dll": {}
         }
       },
-      "DatingApp.DTOs/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/DatingApp.DTOs.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DatingApp.DTOs.dll": {}
-        }
-      },
       "DatingApp.Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -5564,11 +5554,6 @@
       "path": "../DatingApp.Database/DatingApp.Database.csproj",
       "msbuildProject": "../DatingApp.Database/DatingApp.Database.csproj"
     },
-    "DatingApp.DTOs/1.0.0": {
-      "type": "project",
-      "path": "../DatingApp.DTOs/DatingApp.DTOs.csproj",
-      "msbuildProject": "../DatingApp.DTOs/DatingApp.DTOs.csproj"
-    },
     "DatingApp.Infrastructure/1.0.0": {
       "type": "project",
       "path": "../DatingApp.Infrastructure/DatingApp.Infrastructure.csproj",
@@ -5577,7 +5562,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "DatingApp.DTOs >= 1.0.0",
+      "C:\\Users\\Nadija\\Desktop\\JAP\\DatingApp.API\\DatingApp.DTOs\\DatingApp.DTOs.csproj",
       "DatingApp.Database >= 1.0.0",
       "DatingApp.Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.11",
@@ -5695,5 +5680,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'C:\\Users\\Nadija\\Desktop\\JAP\\DatingApp.API\\DatingApp.DTOs\\DatingApp.DTOs.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "C:\\Users\\Nadija\\Desktop\\JAP\\DatingApp.API\\DatingApp.DTOs\\DatingApp.DTOs.csproj",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }
