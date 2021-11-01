@@ -92,7 +92,6 @@ C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Microso
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Microsoft.OpenApi.dll
-C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -129,3 +128,4 @@ C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\obj\Debug\net5.0\ref\Dat
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\obj\Debug\net5.0\DatingApp.API.pdb
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\obj\Debug\net5.0\DatingApp.API.genruntimeconfig.cache
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\obj\Debug\net5.0\DatingApp.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

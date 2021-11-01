@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "k7DLaECO6ArG2kWr549UNWmorTp5MXnWgCB8KnAjgGUauVoKlmgic29VC2GW8JIwxbJzm16qGtOw0cUjGy6Ajg==",
-  "success": false,
+  "dgSpecHash": "9+gIJ7RMu1Imp4Phqv7qLQkn/KaBieSzb1cpXG6yTJXChJUxmiArryW8a9nTHqzYpMDOd3GvLEY7QEd3YRV2bQ==",
+  "success": true,
   "projectFilePath": "C:\\Users\\Nadija\\Desktop\\JAP\\DatingApp.API\\DatingApp.API\\DatingApp.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nadija\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
@@ -104,15 +104,5 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for 'C:\\Users\\Nadija\\Desktop\\JAP\\DatingApp.API\\DatingApp.DTOs\\DatingApp.DTOs.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "libraryId": "C:\\Users\\Nadija\\Desktop\\JAP\\DatingApp.API\\DatingApp.DTOs\\DatingApp.DTOs.csproj",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  "logs": []
 }

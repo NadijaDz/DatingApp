@@ -30,3 +30,4 @@ C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.Infrastructure\obj\Debug\net
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.Infrastructure\obj\Debug\net5.0\ref\DatingApp.Infrastructure.dll
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.Infrastructure\obj\Debug\net5.0\DatingApp.Infrastructure.pdb
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.Infrastructure\obj\Debug\net5.0\DatingApp.Infrastructure.genruntimeconfig.cache
+C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.Infrastructure\obj\Debug\net5.0\DatingApp.Infrastructure.csproj.CopyComplete
