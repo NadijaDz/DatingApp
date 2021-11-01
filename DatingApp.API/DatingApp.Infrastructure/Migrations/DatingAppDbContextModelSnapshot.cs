@@ -25,12 +25,41 @@ namespace DatingApp.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordSalt")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            PasswordHash = "cGFzc3dvcmQ=ZGF0aW5nYXBw",
+                            PasswordSalt = "ZGF0aW5nYXBw",
+                            UserName = "Dave"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            PasswordHash = "cGFzc3dvcmQ=ZGF0aW5nYXBw",
+                            PasswordSalt = "ZGF0aW5nYXBw",
+                            UserName = "Bob"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            PasswordHash = "cGFzc3dvcmQ=ZGF0aW5nYXBw",
+                            PasswordSalt = "ZGF0aW5nYXBw",
+                            UserName = "Tom"
+                        });
                 });
 #pragma warning restore 612, 618
         }
