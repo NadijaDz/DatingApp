@@ -1,6 +1,7 @@
 using DatingApp.API.Extensions;
 using DatingApp.Infrastructure.EF;
 using DatingApp.Infrastructure.Interfaces;
+using DatingApp.Infrastructure.Middleware;
 using DatingApp.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -52,10 +53,12 @@ namespace DatingApp.API
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                //app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DatingApp.API v1"));
             }
+
+            app.UseMiddleware<ExceptionMiddleware>();
 
             app.UseHttpsRedirection();
 

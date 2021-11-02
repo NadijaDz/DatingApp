@@ -122,10 +122,10 @@ C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\obj\Debug\net5.0\staticw
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\obj\Debug\net5.0\staticwebassets\DatingApp.API.StaticWebAssets.xml
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\obj\Debug\net5.0\scopedcss\bundle\DatingApp.API.styles.css
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\obj\Debug\net5.0\DatingApp.API.RazorTargetAssemblyInfo.cache
-C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\obj\Debug\net5.0\DatingApp.API.csproj.CopyComplete
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\obj\Debug\net5.0\DatingApp.API.dll
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\obj\Debug\net5.0\ref\DatingApp.API.dll
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\obj\Debug\net5.0\DatingApp.API.pdb
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\obj\Debug\net5.0\DatingApp.API.genruntimeconfig.cache
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\obj\Debug\net5.0\DatingApp.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\NLog.dll

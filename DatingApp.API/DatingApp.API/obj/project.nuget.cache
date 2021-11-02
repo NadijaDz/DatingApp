@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9+gIJ7RMu1Imp4Phqv7qLQkn/KaBieSzb1cpXG6yTJXChJUxmiArryW8a9nTHqzYpMDOd3GvLEY7QEd3YRV2bQ==",
+  "dgSpecHash": "GzYSvTOS4OHl0PKhCE0gGKaUJ2mxS2YZCGRyXXCRGrPLjLhJg+QMNTrzLuWhxi0GWJRoANx/2ZVQ+pAf39qyng==",
   "success": true,
   "projectFilePath": "C:\\Users\\Nadija\\Desktop\\JAP\\DatingApp.API\\DatingApp.API\\DatingApp.API.csproj",
   "expectedPackageFiles": [
@@ -37,6 +37,7 @@
     "C:\\Users\\Nadija\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\Nadija\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Nadija\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Nadija\\.nuget\\packages\\nlog\\4.7.12\\nlog.4.7.12.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Nadija\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "C:\\Users\\Nadija\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
