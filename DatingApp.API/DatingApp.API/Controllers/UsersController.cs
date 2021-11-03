@@ -1,5 +1,8 @@
 ﻿using DatingApp.Database;
+using DatingApp.DTOs;
 using DatingApp.Infrastructure.EF;
+using DatingApp.Infrastructure.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,27 +13,27 @@ using System.Threading.Tasks;
 
 namespace DatingApp.API.Controllers
 {
- 
+    [Authorize]
     public class UsersController : BaseApiController
     {
-        private readonly DatingAppDbContext _context;
+        private readonly IUserService _userService;
 
-        public UsersController(DatingAppDbContext context)
+        public UsersController(IUserService userService)
         {
-            _context = context;
+            _userService = userService;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
+        public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers()
         {
-            return await _context.Users.ToListAsync();
+            return Ok(await _userService.GetUsersAsync());
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{username}")]
 
-        public async Task<ActionResult<AppUser>> GetUsers(int id)
+        public async Task<ActionResult<MemberDto>> GetUser(string username)
         {
-            return await _context.Users.FindAsync(id);
+            return await _userService.GetMemberAsync(username);
         }
     }
 }

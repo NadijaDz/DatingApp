@@ -15,34 +15,13 @@ namespace DatingApp.Infrastructure.EF
         }
 
         public DbSet<AppUser> Users { get; set; }
+        public DbSet<Photo> Photos { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //OnModelCreatingPartial(modelBuilder);
-
             modelBuilder.Seed();
-
-            //modelBuilder.Entity<AppUser>().HasData(
-            //    new AppUser
-            //    {
-            //        Id = 1,
-            //        UserName = "Bob",
-            //        PasswordHash = "",
-            //        PasswordSalt = ""
-            //    },
-            //      new AppUser
-            //      {
-            //          Id = 2,
-            //          UserName = "Tom",
-            //          PasswordHash = "",
-            //          PasswordSalt = ""
-            //      }
-            //    );
-        }
-
-
-        //partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
-       
+        }     
 
     }
 }

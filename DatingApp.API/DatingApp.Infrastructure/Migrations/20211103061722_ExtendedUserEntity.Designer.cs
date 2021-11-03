@@ -4,14 +4,16 @@ using DatingApp.Infrastructure.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DatingApp.Infrastructure.Migrations
 {
     [DbContext(typeof(DatingAppDbContext))]
-    partial class DatingAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211103061722_ExtendedUserEntity")]
+    partial class ExtendedUserEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,54 +74,33 @@ namespace DatingApp.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 7,
-                            City = "Byrnedale",
-                            Country = "Dominican Republic",
-                            Created = new DateTime(2021, 11, 3, 8, 51, 5, 500, DateTimeKind.Local).AddTicks(9590),
-                            DateOfBirth = new DateTime(2018, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Gender = "Male",
-                            Interests = "Interests test",
-                            Introduction = "test introduction",
-                            KnownAs = "Dave",
-                            LastActive = new DateTime(2021, 11, 3, 8, 51, 5, 501, DateTimeKind.Local).AddTicks(950),
-                            LookingFor = "test looking for",
-                            PasswordHash = "System.Byte[]",
-                            PasswordSalt = "System.Byte[]",
+                            Id = 1,
+                            Created = new DateTime(2021, 11, 3, 7, 17, 21, 441, DateTimeKind.Local).AddTicks(4536),
+                            DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LastActive = new DateTime(2021, 11, 3, 7, 17, 21, 448, DateTimeKind.Local).AddTicks(1134),
+                            PasswordHash = "cGFzc3dvcmQ=ZGF0aW5nYXBw",
+                            PasswordSalt = "ZGF0aW5nYXBw",
                             UserName = "Dave"
                         },
                         new
                         {
-                            Id = 8,
-                            City = "Thatcher",
-                            Country = "S. Georgia and S. Sandwich Isls.",
-                            Created = new DateTime(2021, 11, 3, 8, 51, 5, 502, DateTimeKind.Local).AddTicks(6246),
-                            DateOfBirth = new DateTime(2014, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Gender = "Male",
-                            Interests = "Interests test",
-                            Introduction = "test introduction",
-                            KnownAs = "Bob",
-                            LastActive = new DateTime(2021, 11, 3, 8, 51, 5, 502, DateTimeKind.Local).AddTicks(6256),
-                            LookingFor = "test looking for",
-                            PasswordHash = "System.Byte[]",
-                            PasswordSalt = "System.Byte[]",
+                            Id = 2,
+                            Created = new DateTime(2021, 11, 3, 7, 17, 21, 448, DateTimeKind.Local).AddTicks(7019),
+                            DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LastActive = new DateTime(2021, 11, 3, 7, 17, 21, 448, DateTimeKind.Local).AddTicks(7089),
+                            PasswordHash = "cGFzc3dvcmQ=ZGF0aW5nYXBw",
+                            PasswordSalt = "ZGF0aW5nYXBw",
                             UserName = "Bob"
                         },
                         new
                         {
-                            Id = 9,
-                            City = "Mostar",
-                            Country = "BiH",
-                            Created = new DateTime(2021, 11, 3, 8, 51, 5, 502, DateTimeKind.Local).AddTicks(7056),
-                            DateOfBirth = new DateTime(2002, 5, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Gender = "Female",
-                            Interests = "Interests test",
-                            Introduction = "test introduction",
-                            KnownAs = "Rossa",
-                            LastActive = new DateTime(2021, 11, 3, 8, 51, 5, 502, DateTimeKind.Local).AddTicks(7065),
-                            LookingFor = "test looking for",
-                            PasswordHash = "System.Byte[]",
-                            PasswordSalt = "System.Byte[]",
-                            UserName = "Rossa"
+                            Id = 3,
+                            Created = new DateTime(2021, 11, 3, 7, 17, 21, 448, DateTimeKind.Local).AddTicks(7113),
+                            DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LastActive = new DateTime(2021, 11, 3, 7, 17, 21, 448, DateTimeKind.Local).AddTicks(7124),
+                            PasswordHash = "cGFzc3dvcmQ=ZGF0aW5nYXBw",
+                            PasswordSalt = "ZGF0aW5nYXBw",
+                            UserName = "Tom"
                         });
                 });
 
@@ -147,43 +128,22 @@ namespace DatingApp.Infrastructure.Migrations
                     b.HasIndex("AppUserId");
 
                     b.ToTable("Photos");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AppUserId = 7,
-                            IsMain = true,
-                            PublicId = "11",
-                            Url = "https://randomuser.me/api/portraits/men/95.jpg"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AppUserId = 8,
-                            IsMain = true,
-                            PublicId = "12",
-                            Url = "https://randomuser.me/api/portraits/men/97.jpg"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            AppUserId = 9,
-                            IsMain = true,
-                            PublicId = "13",
-                            Url = "https://randomuser.me/api/portraits/women/6.jpg"
-                        });
                 });
 
             modelBuilder.Entity("DatingApp.Database.Photo", b =>
                 {
                     b.HasOne("DatingApp.Database.AppUser", "AppUser")
-                        .WithMany()
+                        .WithMany("Photos")
                         .HasForeignKey("AppUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("AppUser");
+                });
+
+            modelBuilder.Entity("DatingApp.Database.AppUser", b =>
+                {
+                    b.Navigation("Photos");
                 });
 #pragma warning restore 612, 618
         }

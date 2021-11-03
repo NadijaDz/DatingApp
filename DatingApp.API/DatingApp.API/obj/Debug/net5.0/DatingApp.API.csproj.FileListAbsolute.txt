@@ -129,3 +129,7 @@ C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\obj\Debug\net5.0\DatingA
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\obj\Debug\net5.0\DatingApp.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\NLog.dll
+C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\UserSeedData.json
+C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\obj\Debug\net5.0\DatingApp.API.csproj.CopyComplete
+C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

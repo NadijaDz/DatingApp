@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
+using DatingApp.Infrastructure.Mapping;
 
 namespace DatingApp.API.Extensions
 {
@@ -17,6 +19,9 @@ namespace DatingApp.API.Extensions
         public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
         {
             services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IUserService, UserService>();
+
+            services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
 
             services.AddDbContext<DatingAppDbContext>(options =>
              options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
