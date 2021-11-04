@@ -20,6 +20,8 @@ namespace DatingApp.Infrastructure.Mapping
               /*  .ForMember(dest=>dest.Age, opt=>opt.MapFrom(src=>src.DateOfBirth.CalculateAge()))*/;
             CreateMap<Photo, PhotoDto>();
             CreateMap<AppUser, MemberUpdateDto>().ReverseMap();
+            CreateMap<RegisterDto, AppUser>();
+
 
         }
     }

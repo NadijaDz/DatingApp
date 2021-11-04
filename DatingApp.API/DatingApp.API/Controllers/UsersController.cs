@@ -20,7 +20,6 @@ namespace DatingApp.API.Controllers
     public class UsersController : BaseApiController
     {
         protected readonly IMapper _mapper;
-
         private readonly IUserService _userService;
         private readonly IPhotoService _photoservice;
 
