@@ -32,4 +32,3 @@ C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.Infrastructure\obj\Debug\net
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.Infrastructure\obj\Debug\net5.0\DatingApp.Infrastructure.genruntimeconfig.cache
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.Infrastructure\bin\Debug\net5.0\DatingApp.DTOs.dll
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.Infrastructure\bin\Debug\net5.0\DatingApp.DTOs.pdb
-C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.Infrastructure\obj\Debug\net5.0\DatingApp.Infrastructure.csproj.CopyComplete

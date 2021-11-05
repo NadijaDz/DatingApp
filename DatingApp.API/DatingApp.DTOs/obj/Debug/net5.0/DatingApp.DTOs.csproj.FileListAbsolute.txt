@@ -12,3 +12,4 @@ C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.DTOs\obj\Debug\net5.0\ref\Da
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.DTOs\obj\Debug\net5.0\DatingApp.DTOs.pdb
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.DTOs\bin\Debug\net5.0\DatingApp.Database.dll
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.DTOs\bin\Debug\net5.0\DatingApp.Database.pdb
+C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.DTOs\obj\Debug\net5.0\DatingApp.DTOs.csproj.CopyComplete
