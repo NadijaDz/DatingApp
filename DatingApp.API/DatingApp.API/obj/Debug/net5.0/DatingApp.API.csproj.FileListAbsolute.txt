@@ -133,3 +133,6 @@ C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\UserSee
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\obj\Debug\net5.0\DatingApp.API.csproj.CopyComplete
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\AutoMapper.dll
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\CloudinaryDotNet.dll
+C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Microsoft.Extensions.WebEncoders.dll
+C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Newtonsoft.Json.dll

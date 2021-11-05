@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DatingApp.API.Extensions
+namespace DatingApp.Infrastructure.Extensions
 {
     public static class IdentityServiceExtensions
     {

@@ -13,7 +13,7 @@ using AutoMapper;
 using DatingApp.Infrastructure.Mapping;
 using DatingApp.Infrastructure.Helpers;
 
-namespace DatingApp.API.Extensions
+namespace DatingApp.Infrastructure.Extensions
 {
     public static class ApplicationServiceExtensions
     {
@@ -25,6 +25,7 @@ namespace DatingApp.API.Extensions
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IPhotoService, PhotoService>();
+            services.AddScoped<LogUserActivity>();
 
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
 

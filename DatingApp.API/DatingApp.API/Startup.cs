@@ -1,5 +1,6 @@
-using DatingApp.API.Extensions;
+
 using DatingApp.Infrastructure.EF;
+using DatingApp.Infrastructure.Extensions;
 using DatingApp.Infrastructure.Interfaces;
 using DatingApp.Infrastructure.Middleware;
 using DatingApp.Infrastructure.Services;
