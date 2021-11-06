@@ -1,4 +1,7 @@
 ﻿using DatingApp.Database;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,14 +11,16 @@ using System.Threading.Tasks;
 
 namespace DatingApp.Infrastructure.EF
 {
-    public partial class DatingAppDbContext : DbContext
+    public class DatingAppDbContext : IdentityDbContext<AppUser, AppRole, int,
+        Microsoft.AspNetCore.Identity.IdentityUserClaim<int>, AppUserRole, 
+        Microsoft.AspNetCore.Identity.IdentityUserLogin<int>, IdentityRoleClaim<int>,
+        IdentityUserToken<int>>
     {
         public DatingAppDbContext(DbContextOptions<DatingAppDbContext> options) : base(options)
         {
         }
 
-        public DbSet<AppUser> Users { get; set; }
-
+       
         public DbSet<Photo> Photos { get; set; }
 
         public DbSet<UserLike> Likes{get; set;}
@@ -25,6 +30,20 @@ namespace DatingApp.Infrastructure.EF
         {
             modelBuilder.Seed();
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<AppUser>()
+                 .HasMany(ur => ur.UserRoles)
+                 .WithOne(u => u.User)
+                 .HasForeignKey(ur => ur.UserId)
+                 .IsRequired();
+
+            modelBuilder.Entity<AppRole>()
+                .HasMany(ur => ur.UserRoles)
+                .WithOne(u => u.Role)
+                .HasForeignKey(ur => ur.RoleId)
+                .IsRequired();
+
+
             modelBuilder.Entity<UserLike>().HasKey(k => new { k.SourceUserId, k.LikedUserId });
 
             modelBuilder.Entity<UserLike>().HasOne(s => s.SourceUser).WithMany(l => l.LikedUsers)

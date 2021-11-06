@@ -28,8 +28,10 @@ namespace DatingApp.Database
                     Interests="Interests test",
                     City= "Byrnedale",
                     Country= "Dominican Republic",
-                    PasswordHash =hmac.ComputeHash(Encoding.UTF8.GetBytes("Password")).ToString(),
-                    PasswordSalt=hmac.Key.ToString()},
+                    //PasswordHash =hmac.ComputeHash(Encoding.UTF8.GetBytes("Password")).ToString(),
+                    //PasswordSalt=hmac.Key.ToString()
+                    
+                    },
 
 
                 new AppUser{Id=8,UserName="Bob",Gender="Male",
@@ -42,10 +44,10 @@ namespace DatingApp.Database
                     Interests="Interests test",
                     City= "Thatcher",
                     Country= "S. Georgia and S. Sandwich Isls.",
-                    PasswordHash=hmac.ComputeHash(Encoding.UTF8.GetBytes("Password")).ToString(),
-                    PasswordSalt=hmac.Key.ToString()},
+                    //PasswordHash=hmac.ComputeHash(Encoding.UTF8.GetBytes("Password")).ToString(),
+                    //PasswordSalt=hmac.Key.ToString()
+                    },
                 
-              
                 new AppUser{Id=9,UserName="Rossa",Gender="Female",
                     DateOfBirth=new DateTime(new Random().Next(2000, 2021), new Random().Next(1, 12), new Random().Next(1, 28),0,0,0),
                     KnownAs="Rossa",
@@ -56,8 +58,9 @@ namespace DatingApp.Database
                     Interests="Interests test",
                     City= "Mostar",
                     Country= "BiH",
-                    PasswordHash=hmac.ComputeHash(Encoding.UTF8.GetBytes("Password")).ToString(),
-                    PasswordSalt=hmac.Key.ToString()},
+                    //PasswordHash=hmac.ComputeHash(Encoding.UTF8.GetBytes("Password")).ToString(),
+                    //PasswordSalt=hmac.Key.ToString()
+                   },
             };
             modelBuilder.Entity<AppUser>().HasData(users);
 

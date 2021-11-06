@@ -19,6 +19,35 @@ namespace DatingApp.Infrastructure.Migrations
                 .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("DatingApp.Database.AppRole", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles");
+                });
+
             modelBuilder.Entity("DatingApp.Database.AppUser", b =>
                 {
                     b.Property<int>("Id")
@@ -26,7 +55,14 @@ namespace DatingApp.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
                     b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Country")
@@ -37,6 +73,13 @@ namespace DatingApp.Infrastructure.Migrations
 
                     b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Gender")
                         .HasColumnType("nvarchar(max)");
@@ -53,74 +96,133 @@ namespace DatingApp.Infrastructure.Migrations
                     b.Property<DateTime>("LastActive")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
                     b.Property<string>("LookingFor")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PasswordSalt")
+                    b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserName")
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers");
 
                     b.HasData(
                         new
                         {
                             Id = 7,
+                            AccessFailedCount = 0,
                             City = "Byrnedale",
+                            ConcurrencyStamp = "7a41a386-2075-4a00-a5a3-175a9a90ded6",
                             Country = "Dominican Republic",
-                            Created = new DateTime(2021, 11, 5, 11, 59, 37, 85, DateTimeKind.Local).AddTicks(3470),
-                            DateOfBirth = new DateTime(2002, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Created = new DateTime(2021, 11, 6, 19, 40, 48, 654, DateTimeKind.Local).AddTicks(9242),
+                            DateOfBirth = new DateTime(2013, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EmailConfirmed = false,
                             Gender = "Male",
                             Interests = "Interests test",
                             Introduction = "test introduction",
                             KnownAs = "Dave",
-                            LastActive = new DateTime(2021, 11, 5, 11, 59, 37, 85, DateTimeKind.Local).AddTicks(3796),
+                            LastActive = new DateTime(2021, 11, 6, 19, 40, 48, 655, DateTimeKind.Local).AddTicks(12),
+                            LockoutEnabled = false,
                             LookingFor = "test looking for",
-                            PasswordHash = "System.Byte[]",
-                            PasswordSalt = "System.Byte[]",
+                            PhoneNumberConfirmed = false,
+                            TwoFactorEnabled = false,
                             UserName = "Dave"
                         },
                         new
                         {
                             Id = 8,
+                            AccessFailedCount = 0,
                             City = "Thatcher",
+                            ConcurrencyStamp = "b6eab4b4-425b-41ea-8b1c-1155b42bc684",
                             Country = "S. Georgia and S. Sandwich Isls.",
-                            Created = new DateTime(2021, 11, 5, 11, 59, 37, 85, DateTimeKind.Local).AddTicks(9501),
-                            DateOfBirth = new DateTime(2005, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Created = new DateTime(2021, 11, 6, 19, 40, 48, 655, DateTimeKind.Local).AddTicks(3953),
+                            DateOfBirth = new DateTime(2009, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EmailConfirmed = false,
                             Gender = "Male",
                             Interests = "Interests test",
                             Introduction = "test introduction",
                             KnownAs = "Bob",
-                            LastActive = new DateTime(2021, 11, 5, 11, 59, 37, 85, DateTimeKind.Local).AddTicks(9504),
+                            LastActive = new DateTime(2021, 11, 6, 19, 40, 48, 655, DateTimeKind.Local).AddTicks(3959),
+                            LockoutEnabled = false,
                             LookingFor = "test looking for",
-                            PasswordHash = "System.Byte[]",
-                            PasswordSalt = "System.Byte[]",
+                            PhoneNumberConfirmed = false,
+                            TwoFactorEnabled = false,
                             UserName = "Bob"
                         },
                         new
                         {
                             Id = 9,
+                            AccessFailedCount = 0,
                             City = "Mostar",
+                            ConcurrencyStamp = "f7191e11-dd74-4820-92fd-5e84908dd090",
                             Country = "BiH",
-                            Created = new DateTime(2021, 11, 5, 11, 59, 37, 85, DateTimeKind.Local).AddTicks(9792),
-                            DateOfBirth = new DateTime(2012, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Created = new DateTime(2021, 11, 6, 19, 40, 48, 655, DateTimeKind.Local).AddTicks(4273),
+                            DateOfBirth = new DateTime(2009, 6, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EmailConfirmed = false,
                             Gender = "Female",
                             Interests = "Interests test",
                             Introduction = "test introduction",
                             KnownAs = "Rossa",
-                            LastActive = new DateTime(2021, 11, 5, 11, 59, 37, 85, DateTimeKind.Local).AddTicks(9795),
+                            LastActive = new DateTime(2021, 11, 6, 19, 40, 48, 655, DateTimeKind.Local).AddTicks(4279),
+                            LockoutEnabled = false,
                             LookingFor = "test looking for",
-                            PasswordHash = "System.Byte[]",
-                            PasswordSalt = "System.Byte[]",
+                            PhoneNumberConfirmed = false,
+                            TwoFactorEnabled = false,
                             UserName = "Rossa"
                         });
+                });
+
+            modelBuilder.Entity("DatingApp.Database.AppUserRole", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles");
                 });
 
             modelBuilder.Entity("DatingApp.Database.Photo", b =>
@@ -190,6 +292,111 @@ namespace DatingApp.Infrastructure.Migrations
                     b.ToTable("Likes");
                 });
 
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("DatingApp.Database.AppUserRole", b =>
+                {
+                    b.HasOne("DatingApp.Database.AppRole", "Role")
+                        .WithMany("UserRoles")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DatingApp.Database.AppUser", "User")
+                        .WithMany("UserRoles")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Role");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("DatingApp.Database.Photo", b =>
                 {
                     b.HasOne("DatingApp.Database.AppUser", "AppUser")
@@ -220,6 +427,47 @@ namespace DatingApp.Infrastructure.Migrations
                     b.Navigation("SourceUser");
                 });
 
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
+                {
+                    b.HasOne("DatingApp.Database.AppRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
+                {
+                    b.HasOne("DatingApp.Database.AppUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
+                {
+                    b.HasOne("DatingApp.Database.AppUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
+                {
+                    b.HasOne("DatingApp.Database.AppUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DatingApp.Database.AppRole", b =>
+                {
+                    b.Navigation("UserRoles");
+                });
+
             modelBuilder.Entity("DatingApp.Database.AppUser", b =>
                 {
                     b.Navigation("LikedByUsers");
@@ -227,6 +475,8 @@ namespace DatingApp.Infrastructure.Migrations
                     b.Navigation("LikedUsers");
 
                     b.Navigation("Photos");
+
+                    b.Navigation("UserRoles");
                 });
 #pragma warning restore 612, 618
         }

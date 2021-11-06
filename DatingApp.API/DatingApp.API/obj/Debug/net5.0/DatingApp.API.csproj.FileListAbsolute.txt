@@ -136,3 +136,12 @@ C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\AutoMap
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\CloudinaryDotNet.dll
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Microsoft.Extensions.WebEncoders.dll
 C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\EntityFramework.SqlServer.dll
+C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\EntityFramework.dll
+C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Nadija\Desktop\JAP\DatingApp.API\DatingApp.API\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

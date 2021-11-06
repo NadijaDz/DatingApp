@@ -3,11 +3,10 @@ using DatingApp.Database;
 using DatingApp.DTOs;
 using DatingApp.Infrastructure.EF;
 using DatingApp.Infrastructure.Interfaces;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -19,17 +18,18 @@ namespace DatingApp.API.Controllers
     [ApiController]
     public class AccountController : BaseApiController
     {
-        private readonly DatingAppDbContext _context;
         private readonly ITokenService _tokenservice;
         protected readonly IMapper _mapper;
+        private readonly UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
 
-
-
-        public AccountController(DatingAppDbContext context, ITokenService tokenservice, IMapper mapper)
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, 
+             ITokenService tokenservice, IMapper mapper)
         {
-            _context = context;
             _tokenservice = tokenservice;
             _mapper = mapper;
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         [HttpPost("register")]
@@ -42,19 +42,18 @@ namespace DatingApp.API.Controllers
 
             var user = _mapper.Map<AppUser>(register);
 
-            using var hmac = new HMACSHA512();
-
             user.UserName = register.Username.ToLower();
-            user.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(register.Password)).ToString();
-            user.PasswordSalt = hmac.Key.ToString();
-            
 
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
+            var result = await _userManager.CreateAsync(user, register.Password);
+            if (!result.Succeeded) return BadRequest(result.Errors);
+
+            var roleResult = await _userManager.AddToRoleAsync(user, "Member");
+            if (roleResult.Succeeded) return BadRequest(result.Errors);
+
             return new UserDto
             {
                 Username = user.UserName,
-                Token =_tokenservice.CreateToken(user),
+                Token =await _tokenservice.CreateToken(user),
                 KnownAs = user.KnownAs,
                 Gender = user.Gender
             };
@@ -63,23 +62,20 @@ namespace DatingApp.API.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
-            var user = await _context.Users.Include(p=>p.Photos).SingleOrDefaultAsync(x => x.UserName == loginDto.Username);
+            var user = await _userManager.Users.Include(p=>p.Photos)
+                .SingleOrDefaultAsync(x => x.UserName == loginDto.Username.ToLower());
 
             if (user == null) return Unauthorized("Invalid username");
 
-            byte[] bytesPasswordSalt = System.Text.Encoding.Unicode.GetBytes(user.PasswordSalt);
+            var result = await _signInManager
+                .CheckPasswordSignInAsync(user, loginDto.Password, false);
 
-            using var hmac = new HMACSHA512(bytesPasswordSalt);
-            var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
-            for(int i = 0; i < computedHash.Length; i++)
-            {
-                if (computedHash[i] != user.PasswordHash[i]) return Unauthorized("Invalid password");
-            }
+            if (!result.Succeeded) return Unauthorized();
 
             return new UserDto
             {
                 Username = user.UserName,
-                Token = _tokenservice.CreateToken(user),
+                Token = await _tokenservice.CreateToken(user),
                 PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url,
                 KnownAs = user.KnownAs,
                 Gender=user.Gender
@@ -88,7 +84,7 @@ namespace DatingApp.API.Controllers
 
         private async Task<bool> UserExists(string username)
         {
-            return await _context.Users.AnyAsync(x => x.UserName == username.ToLower());
+            return await _userManager.Users.AnyAsync(x => x.UserName == username.ToLower());
 
         }
     }
